@@ -73,6 +73,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.6.6
+
       - name: Terraform Init
         id: init
         run: terraform init
@@ -111,6 +116,11 @@ jobs:
     if: github.event_name == 'pull_request' || github.event.inputs.action == 'apply'
     steps:
       - uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.6.6
 
       - name: Terraform Plan
         id: plan
@@ -191,6 +201,11 @@ jobs:
     if: github.event_name == 'workflow_dispatch'
     steps:
       - uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.6.6
 
       - name: Terraform Apply/Destroy
         run: |
