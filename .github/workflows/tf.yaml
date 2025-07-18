@@ -78,6 +78,12 @@ jobs:
         with:
           terraform_version: 1.6.6
 
+      - name: Configure AWS credentials with OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::650251701672:role/s3-github
+          aws-region: us-east-1
+
       - name: Terraform Init
         id: init
         run: terraform init
@@ -103,6 +109,12 @@ jobs:
         with:
           terraform_version: 1.6.6
 
+      - name: Configure AWS credentials with OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::650251701672:role/s3-github
+          aws-region: us-east-1
+
       - name: Terraform Init
         run: terraform init
 
@@ -122,6 +134,12 @@ jobs:
         with:
           terraform_version: 1.6.6
 
+      - name: Configure AWS credentials with OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::650251701672:role/s3-github
+          aws-region: us-east-1
+
       - name: Terraform Plan
         id: plan
         run: terraform plan -no-color -input=false
@@ -133,6 +151,17 @@ jobs:
     if: github.event_name == 'workflow_dispatch'
     steps:
       - uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.6.6
+
+      - name: Configure AWS credentials with OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::650251701672:role/s3-github
+          aws-region: us-east-1
 
       - name: Install terraform-docs
         run: |
@@ -206,6 +235,12 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.6.6
+
+      - name: Configure AWS credentials with OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::650251701672:role/s3-github
+          aws-region: us-east-1
 
       - name: Terraform Apply/Destroy
         run: |
