@@ -13,7 +13,7 @@ resource "aws_internet_gateway" "igw" {
   }
 }
 
-# Public Subnets
+# Public Subnet
 resource "aws_subnet" "public" {
   count                   = 2
   vpc_id                  = aws_vpc.main.id
