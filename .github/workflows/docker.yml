@@ -19,7 +19,7 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::650251701672:role/s3-github
           role-session-name: github-assume
-          aws-region: us-east-1
+          aws-region: us-west-1
 
       - name: Login to Amazon ECR
         id: login-ecr
@@ -50,7 +50,7 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::650251701672:role/s3-github
           role-session-name: github-assume
-          aws-region: us-east-1
+          aws-region: us-west-1
 
       - name: Login to Amazon ECR
         id: login-ecr

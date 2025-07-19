@@ -45,7 +45,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::650251701672:role/s3-github
-          aws-region: us-east-1
+          aws-region: us-west-1
 
       - name: Terraform Init
         run: terraform init
@@ -84,7 +84,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::650251701672:role/s3-github
-          aws-region: us-east-1
+          aws-region: us-west-1
 
       - name: Terraform Init
         run: terraform init
@@ -111,7 +111,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::650251701672:role/s3-github
-          aws-region: us-east-1
+          aws-region: us-west-1
 
       - name: Terraform Init
         run: terraform init
@@ -135,7 +135,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::650251701672:role/s3-github
-          aws-region: us-east-1
+          aws-region: us-west-1
 
       - name: Terraform Init
         run: terraform init
@@ -159,7 +159,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::650251701672:role/s3-github
-          aws-region: us-east-1
+          aws-region: us-west-1
 
       - name: Terraform Init
         run: terraform init
