@@ -11,6 +11,7 @@ resource "aws_ecs_cluster" "test" {
   }
 }
 
+
 resource "aws_ecs_task_definition" "test_1" {
   family                 = "${var.name}-task-definition-1"
   requires_compatibilities = ["FARGATE"]
